@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ProductCard from './ProductCard';
 
-const Shop = () => {
+const Shop = (props) => {
   useEffect(() => {
     fetchItems();
   }, []);
@@ -12,8 +13,13 @@ const Shop = () => {
     const data = await fetch('https://fakestoreapi.com/products').then((res) =>
       res.json()
     );
-    console.log(data);
     setItems(data);
+  };
+
+  const addToCart = (item, count) => {
+    console.log(item);
+    console.log(count);
+    // when items added to cart, need to check if same type already in cart - just update count
   };
 
   return (
@@ -21,12 +27,7 @@ const Shop = () => {
       <div className='shop-div'>
         {items.map((item) => (
           <div className='shop-item' key={item.id}>
-            <Link to={`/${item.id}`}>
-              <div>{item.title}</div>
-            </Link>
-            <img src={item.image} height='200' width='200' alt={item.title} />
-            <div>£{item.price}</div>
-            <button>Add to Cart</button>
+            <ProductCard item={item} addToCart={addToCart} />
           </div>
         ))}
       </div>

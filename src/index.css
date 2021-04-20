@@ -1,4 +1,9 @@
 .container {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+  font-size: 3rem;
 }
 
 div {
@@ -8,18 +13,37 @@ div {
 .nav-bar {
   height: 100px;
   background-color: #ff8b94;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-inner {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.links > * {
+  margin-left: 5px;
 }
 
 .shop-container {
-  width: 100%;
   display: flex;
   justify-content: center;
 }
 
 .shop-div {
-  width: 90%;
+  width: 85%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .shop-item {

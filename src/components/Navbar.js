@@ -4,17 +4,15 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <div className='nav-inner'>
-      <ul>
-        <li>
+      <h1 className='logo'>JamesRedux</h1>
+      <div className='links'>
+        <div>
           <Link to='/'>Shop</Link>
-        </li>
-        <li>
+        </div>
+        <div>
           <Link to='/cart'>cart</Link>
-        </li>
-        <li>
-          <Link to='/product'>product</Link>
-        </li>
-      </ul>
+        </div>
+      </div>
     </div>
   );
 };
