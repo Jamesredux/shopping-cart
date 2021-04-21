@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = (props) => {
   return (
     <div className='nav-inner'>
       <h1 className='logo'>JamesRedux</h1>
@@ -10,7 +10,7 @@ const Navbar = () => {
           <Link to='/'>Shop</Link>
         </div>
         <div>
-          <Link to='/cart'>cart</Link>
+          <Link to='/cart'>cart - {props.cartSize}</Link>
         </div>
       </div>
     </div>

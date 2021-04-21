@@ -1,19 +1,19 @@
 import React from 'react';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Shop from './components/Shop';
 import Product from './components/Product';
 import Cart from './components/Cart';
 import Navbar from './components/Navbar';
 
 const Routes = (props) => {
-  const handleAddToCart = (item) => {
-    props.handleAddToCart(item);
+  const handleAddToCart = (item, count) => {
+    props.handleAddToCart(item, count);
   };
   return (
     <BrowserRouter>
       <div className='container'>
         <div className='nav-bar'>
-          <Navbar />
+          <Navbar cartSize={props.cartSize} />
         </div>
         <Switch>
           <Route path='/' exact>

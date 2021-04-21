@@ -58,5 +58,26 @@ div {
   background-color: #fbdddf;
 }
 
-.shop-item img {
+.cart-div {
+  margin-top: 10px;
+}
+
+.cart-title {
+  background-color: #fbdddf;
+  height: 80px;
+  font-size: 2rem;
+  color: rgb(190, 32, 32);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.cart-row {
+  height: 40px;
+  background-color: #fbdddf;
+  margin: 5px;
+  display: grid;
+  grid-template-columns: 5fr 1fr 1fr 1fr;
+  width: 80%;
 }

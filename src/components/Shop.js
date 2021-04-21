@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import ProductCard from './ProductCard';
 
 const Shop = (props) => {
@@ -17,8 +16,8 @@ const Shop = (props) => {
   };
 
   const addToCart = (item, count) => {
-    console.log(item);
-    console.log(count);
+    props.handleAddToCart(item, count);
+
     // when items added to cart, need to check if same type already in cart - just update count
   };
 
