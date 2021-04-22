@@ -43,6 +43,18 @@ const App = () => {
     }
   };
 
+  const handleRemoveFromCart = (id) => {
+    let cartCopy = [...cart];
+    let itemIndex = cartCopy.findIndex((product) => product.id === id);
+    cartCopy.splice(itemIndex, 1);
+
+    setCart(cartCopy);
+  };
+
+  const handleUpdateCount = (id, count) => {
+    let oldCart = [...cart];
+  };
+
   useEffect(() => {
     let newCartSize = cart.reduce((accumulator, currentValue) => {
       return accumulator + currentValue.count;
@@ -56,6 +68,7 @@ const App = () => {
         cart={cart}
         cartSize={cartSize}
         handleAddToCart={handleAddToCart}
+        handleRemoveFromCart={handleRemoveFromCart}
       />
     </div>
   );

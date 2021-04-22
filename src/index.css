@@ -10,6 +10,10 @@ div {
   text-align: center;
 }
 
+input[type='number'] {
+  width: 40px;
+}
+
 .nav-bar {
   height: 100px;
   background-color: #ff8b94;
@@ -78,6 +82,33 @@ div {
   background-color: #fbdddf;
   margin: 5px;
   display: grid;
-  grid-template-columns: 5fr 1fr 1fr 1fr;
+  grid-template-columns: 5fr 1fr 2fr 1fr 1fr;
   width: 80%;
+}
+
+.cart-row > * {
+  place-self: center;
+}
+
+.remove-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 40px;
+  min-width: 40px;
+  color: rgb(88, 86, 86);
+}
+
+.remove-item:hover {
+  color: black;
+}
+
+.cart-count {
+  display: flex;
+}
+
+.cart-count button {
+  background-color: rgb(132, 138, 221);
+  border: none;
+  margin-left: 5px;
 }

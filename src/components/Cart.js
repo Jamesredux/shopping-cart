@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import CartItem from './CartItem';
 
 const Cart = (props) => {
   const [grandTotal, setGrandTotal] = useState(0);
+
+  const removeFromCart = (id) => {
+    props.handleRemoveFromCart(id);
+  };
+
+  const updateCount = (id, count) => {
+    props.handleUpdateCount(id, count);
+  };
 
   useEffect(() => {
     let newGrandTotal = props.cartcontents.reduce(
@@ -26,23 +34,21 @@ const Cart = (props) => {
           <div>Total</div>
         </div>
         {props.cartcontents.map((item) => (
-          <div className='cart-row' key={item.id}>
-            <Link to={`/${item.id}`}>
-              <div>{item.title}</div>
-            </Link>
-            <div>{item.price.toFixed(2)}</div>
-            <div>{item.count}</div>
-            <div>{(item.price * item.count).toFixed(2)}</div>
+          <div key={item.id}>
+            <CartItem
+              item={item}
+              removeFromCart={removeFromCart}
+              updateCount={updateCount}
+            />
           </div>
         ))}
         <div className='cart-row'>
           <div></div>
           <div></div>
-          <div></div>
+          <div>Total to Pay</div>
           <div>{grandTotal.toFixed(2)}</div>
         </div>
       </div>
-      {console.log(props.cartcontents)}
     </div>
   );
 };

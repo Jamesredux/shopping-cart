@@ -9,6 +9,18 @@ const Routes = (props) => {
   const handleAddToCart = (item, count) => {
     props.handleAddToCart(item, count);
   };
+
+  const handleRemoveFromCart = (id) => {
+    props.handleRemoveFromCart(id);
+  };
+
+  const handleUpdateCount = (id, count) => {
+    if (count === 0) {
+      props.handleRemoveFromCart(id);
+    } else {
+      props.handleUpdateCount(id, count);
+    }
+  };
   return (
     <BrowserRouter>
       <div className='container'>
@@ -20,7 +32,11 @@ const Routes = (props) => {
             <Shop handleAddToCart={handleAddToCart} />
           </Route>
           <Route path='/cart'>
-            <Cart cartcontents={props.cart} />
+            <Cart
+              cartcontents={props.cart}
+              handleRemoveFromCart={handleRemoveFromCart}
+              handleUpdateCount={handleUpdateCount}
+            />
           </Route>
           <Route path='/:id'>
             <Product />

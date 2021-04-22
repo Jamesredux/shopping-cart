@@ -21,7 +21,7 @@ const ProductCard = (props) => {
         width='200'
         alt={props.item.title}
       />
-      <div>£{props.item.price}</div>
+      <div>£{props.item.price.toFixed(2)}</div>
       <label>
         <input
           type='number'
