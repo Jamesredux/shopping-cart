@@ -44,15 +44,20 @@ const App = () => {
   };
 
   const handleRemoveFromCart = (id) => {
-    let cartCopy = [...cart];
-    let itemIndex = cartCopy.findIndex((product) => product.id === id);
-    cartCopy.splice(itemIndex, 1);
+    let shallowCopy = [...cart];
+    let itemIndex = shallowCopy.findIndex((product) => product.id === id);
+    shallowCopy.splice(itemIndex, 1);
 
-    setCart(cartCopy);
+    setCart(shallowCopy);
   };
 
   const handleUpdateCount = (id, count) => {
-    let oldCart = [...cart];
+    let shallowCopy = [...cart];
+    let itemIndex = shallowCopy.findIndex((product) => product.id === id);
+    let updatedProduct = { ...shallowCopy[itemIndex] };
+    updatedProduct.count = count;
+    shallowCopy[itemIndex] = updatedProduct;
+    setCart(shallowCopy);
   };
 
   useEffect(() => {
@@ -69,6 +74,7 @@ const App = () => {
         cartSize={cartSize}
         handleAddToCart={handleAddToCart}
         handleRemoveFromCart={handleRemoveFromCart}
+        handleUpdateCount={handleUpdateCount}
       />
     </div>
   );

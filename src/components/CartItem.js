@@ -10,9 +10,9 @@ const CartItem = (props) => {
   };
 
   const updateCount = () => {
-    props.updateCount(props.item.id, cartCount);
-    console.log(cartCount);
+    props.updateCount(props.item.id, parseInt(cartCount));
   };
+
   return (
     <div className='cart-row'>
       <Link to={`/${props.item.id}`}>

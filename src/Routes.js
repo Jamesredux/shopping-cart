@@ -38,9 +38,13 @@ const Routes = (props) => {
               handleUpdateCount={handleUpdateCount}
             />
           </Route>
-          <Route path='/:id'>
-            <Product />
-          </Route>
+          <Route
+            exact
+            path='/:id'
+            render={(props) => (
+              <Product handleAddToCart={handleAddToCart} {...props} />
+            )}
+          />
         </Switch>
       </div>
     </BrowserRouter>

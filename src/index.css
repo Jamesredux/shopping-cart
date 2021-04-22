@@ -6,12 +6,24 @@
   font-size: 3rem;
 }
 
+.title-font {
+  font-size: 1.5rem;
+}
+
 div {
   text-align: center;
 }
 
 input[type='number'] {
   width: 40px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
 }
 
 .nav-bar {
@@ -111,4 +123,16 @@ input[type='number'] {
   background-color: rgb(132, 138, 221);
   border: none;
   margin-left: 5px;
+}
+
+.product-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.product-div > * {
+  width: 70%;
+  margin-bottom: 20px;
 }
