@@ -11,9 +11,9 @@ const ProductCard = (props) => {
     }
   };
   return (
-    <div>
+    <div className='item-card'>
       <Link to={`/${props.item.id}`}>
-        <div>{props.item.title}</div>
+        <div className='product-title'>{props.item.title}</div>
       </Link>
       <img
         src={props.item.image}
@@ -21,7 +21,7 @@ const ProductCard = (props) => {
         width='200'
         alt={props.item.title}
       />
-      <div>£{props.item.price.toFixed(2)}</div>
+      <div className='price'>£{props.item.price.toFixed(2)}</div>
       <label>
         <input
           type='number'

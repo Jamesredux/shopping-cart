@@ -23,11 +23,11 @@ const Cart = (props) => {
   }, [props.cartcontents]);
   return (
     <div className='cart-div'>
-      <div>
-        <h2 className='cart-title'>Shopping Cart</h2>
+      <div className='cart-title'>
+        <h2>Shopping Cart</h2>
       </div>
       <div className='cart-grid'>
-        <div className='cart-row'>
+        <div className='cart-row table-title'>
           <div>Item</div>
           <div>Cost</div>
           <div>Amount</div>

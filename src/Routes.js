@@ -4,6 +4,8 @@ import Shop from './components/Shop';
 import Product from './components/Product';
 import Cart from './components/Cart';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
+import About from './components/About';
 
 const Routes = (props) => {
   const handleAddToCart = (item, count) => {
@@ -24,12 +26,15 @@ const Routes = (props) => {
   return (
     <BrowserRouter>
       <div className='container'>
-        <div className='nav-bar'>
+        <div className='nav-bar static-bar'>
           <Navbar cartSize={props.cartSize} />
         </div>
         <Switch>
           <Route path='/' exact>
             <Shop handleAddToCart={handleAddToCart} />
+          </Route>
+          <Route path='/about'>
+            <About />
           </Route>
           <Route path='/cart'>
             <Cart
@@ -46,6 +51,7 @@ const Routes = (props) => {
             )}
           />
         </Switch>
+        <Footer />
       </div>
     </BrowserRouter>
   );

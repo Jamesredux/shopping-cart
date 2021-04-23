@@ -6,7 +6,7 @@ const Product = (props) => {
   const [count, setCount] = useState(0);
   useEffect(() => {
     fetchItem();
-  }, [item]);
+  }, []);
 
   const addToCart = () => {
     if (count !== 0) {
@@ -23,12 +23,13 @@ const Product = (props) => {
 
   return (
     <div className='product-div'>
+      {console.log(item)}
       <div className='title-font'>{item.title}</div>
       <div>
         <img src={item.image} height='400' width='400' />
       </div>
       <div className='product-desc'>{item.description}</div>
-      <div>£{item.price}</div>
+      <div>£{parseFloat(item.price).toFixed(2)}</div>
       <div>
         <label>
           <input
