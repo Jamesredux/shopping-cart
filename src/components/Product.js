@@ -4,6 +4,14 @@ import { withRouter } from 'react-router-dom';
 const Product = (props) => {
   const [item, setItem] = useState({});
   const [count, setCount] = useState(0);
+
+  const fetchItem = async () => {
+    const product = await fetch(
+      `https://fakestoreapi.com/products/${props.match.params.id}`
+    ).then((res) => res.json());
+    setItem(product);
+  };
+
   useEffect(() => {
     fetchItem();
   }, []);
@@ -14,19 +22,12 @@ const Product = (props) => {
       setCount(0);
     }
   };
-  const fetchItem = async () => {
-    const product = await fetch(
-      `https://fakestoreapi.com/products/${props.match.params.id}`
-    ).then((res) => res.json());
-    setItem(product);
-  };
 
   return (
     <div className='product-div'>
-      {console.log(item)}
       <div className='title-font'>{item.title}</div>
       <div>
-        <img src={item.image} height='400' width='400' />
+        <img src={item.image} height='400' width='400' alt='product' />
       </div>
       <div className='product-desc'>{item.description}</div>
       <div>£{parseFloat(item.price).toFixed(2)}</div>
