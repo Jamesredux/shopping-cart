@@ -30,13 +30,13 @@ const Routes = (props) => {
           <Navbar cartSize={props.cartSize} />
         </div>
         <Switch>
-          <Route path='/' exact>
+          <Route path='/shopping-cart' exact>
             <Shop handleAddToCart={handleAddToCart} />
           </Route>
-          <Route path='/about'>
+          <Route path='/shopping-cart/about'>
             <About />
           </Route>
-          <Route path='/cart'>
+          <Route path='/shopping-cart/cart'>
             <Cart
               cartcontents={props.cart}
               handleRemoveFromCart={handleRemoveFromCart}
@@ -45,7 +45,7 @@ const Routes = (props) => {
           </Route>
           <Route
             exact
-            path='/:id'
+            path='/shopping-cart/:id'
             render={(props) => (
               <Product handleAddToCart={handleAddToCart} {...props} />
             )}

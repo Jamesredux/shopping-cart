@@ -7,19 +7,19 @@ const Navbar = (props) => {
   return (
     <div className='nav-inner'>
       <div>
-        <Link to='/'>
+        <Link to='/shopping-cart'>
           <h1 className='logo'>JamesRedux</h1>
         </Link>
       </div>
       <div className='links'>
         <div>
-          <Link to='/'>Shop</Link>
+          <Link to='/shopping-cart'>Shop</Link>
         </div>
         <div>
-          <Link to='/about'>About</Link>
+          <Link to='/shopping-cart/about'>About</Link>
         </div>
         <div>
-          <Link to='/cart'>
+          <Link to='/shopping-cart/cart'>
             <FontAwesomeIcon icon={faShoppingCart} />{' '}
             <span id='cart-size'>({props.cartSize})</span>
           </Link>

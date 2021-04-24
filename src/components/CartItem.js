@@ -15,7 +15,7 @@ const CartItem = (props) => {
 
   return (
     <div className='cart-row'>
-      <Link to={`/${props.item.id}`}>
+      <Link to={`/shopping-cart/${props.item.id}`}>
         <div>{props.item.title}</div>
       </Link>
       <div>{props.item.price.toFixed(2)}</div>
