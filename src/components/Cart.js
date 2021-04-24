@@ -42,7 +42,7 @@ const Cart = (props) => {
             />
           </div>
         ))}
-        <div className='cart-row'>
+        <div className='cart-row cart-total'>
           <div></div>
           <div></div>
           <div>Total to Pay</div>

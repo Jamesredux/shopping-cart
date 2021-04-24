@@ -22,7 +22,7 @@ const ProductCard = (props) => {
         alt={props.item.title}
       />
       <div className='price'>£{props.item.price.toFixed(2)}</div>
-      <label>
+      <label className='add-to-cart-section'>
         <input
           type='number'
           name='count'
